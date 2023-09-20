@@ -1,0 +1,23 @@
+/* .Image{
+   
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 2px solid #fff;
+   
+    
+    cursor: pointer;
+    &:hover{
+        box-shadow: 0 0 0 3px #fff, 0 0 0 5px #000;
+    }
+}
+
+p{
+    color: #777;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+
+
+ */
