@@ -6,9 +6,9 @@ import logoPara from "../Assets/logo.svg";
 import Image from "next/image";
 
 const StyledHeader = styled.header`
-  background-color: #222;
+  background-color: #fff;
   max-height: 150px;
-  border-bottom: 1.2px solid #39aa;
+  border-bottom: 2px solid #39aa;
 
   // @media screen and (max-width: 768px) {
   //   max-height: 100px;
@@ -31,7 +31,7 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 const NavLink = styled(Link)`
-  color: #aaa;
+  color: #000;
   text-decoration: none;
   font-size: 1.3rem;
   align-items: center;

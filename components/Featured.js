@@ -2,16 +2,15 @@ import styled from "styled-components";
 import Center from "./Center";
 import Button from "./Button";
 import Image from "next/image";
-<link rel="stylesheet" href="style.css" />;
+import ButtonLink from "./ButtonLink";
 
-import Ft1 from "../Assets/pack.png";
+import Ft1 from "../Assets/pack.jpg";
 
 const Bg = styled.div`
-  background-color: #222;
+  background-color: #fff;
   width: 100%;
   height: 100%;
-  min-height: 1553px;
-  color: #fff;
+  color: #000;
   padding: 50px 0;
   // @media screen and (min-width: 768px) {
   //   min-width: 100%;
@@ -28,36 +27,36 @@ const Title = styled.h1`
   // }
 `;
 const Desc = styled.p`
-  color: #aaa;
-  font-size: 0.9rem;
+  color: #000;
+  font-size: 1.2rem;
   margin-top: 30px;
   margin-bottom: 40px;
 `;
 const ColumnsWrapper = styled.div`
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 40px;
-  align-items: center;
+
+  // align-items: center;
 `;
 const Column = styled.div`
   display: flex;
   align-items: center;
+  width: 100%;
+  height: auto;
 `;
 const Images = styled(Image)`
   max-width: 100%;
+  height: 80%;
 
-  height: 100%;
   margin-left: auto;
   margin-right: auto;
+  ///////////////////
   width: 70%;
 
   // @media screen and (max-width: 768px) {
-  //   height: 100%;
-  //   width: 100%;
-  // }
-  // @media screen and (min-width: 320px) {
-  //   height: 50%;
-  //   width: 100%;
+  //   height: 70%;
+  //   width: 70%;
   // }
 `;
 const ButtonWrapper = styled.div`
@@ -65,27 +64,25 @@ const ButtonWrapper = styled.div`
   gap: 15px;
   margin-top: 30px;
 `;
-export default function Featured() {
+export default function Featured({ product }) {
   return (
     <Bg>
       <Center>
         <ColumnsWrapper>
           <Column>
             <div>
-              <Title> 𝙗𝙪𝙮 𝙖𝙣𝙮𝙬𝙝𝙚𝙧𝙚</Title>
-              <Desc>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Ratione in dolorem voluptas quasi quibusdam quaerat nemo officia
-                sapiente quis quod, eligendi harum possimus nisi, distinctio aut
-                facere tenetur? Natus similique minima officiis maxime unde
-                sequi sunt, tempore ipsa ullam excepturi culp a vero illo
-                voluptate porro nulla quia optio placeat iusto.
-              </Desc>
+              <Title>{product.title}</Title>
+              <Desc>{product.description}</Desc>
               <ButtonWrapper>
-                <Button outline white size="l">
+                <ButtonLink
+                  href={"/products/" + product._id}
+                  outline={1}
+                  white={1}
+                  size="l"
+                >
                   Read More
-                </Button>
-                <Button primary size="l">
+                </ButtonLink>
+                <Button primary={1} size="l">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"

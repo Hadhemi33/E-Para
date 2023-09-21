@@ -1,13 +1,13 @@
 import styled, { css } from "styled-components";
 
-const StyledButton = styled.button`
+export const ButtonStyle = css`
   border: 0;
 
   padding: 5px 15px;
   border-radius: 5px;
   display: inline-flex;
   align-items: center;
-
+  text-decoration: none;
   cursor: pointer;
   svg {
     height: 16px;
@@ -25,8 +25,8 @@ const StyledButton = styled.button`
     props.outline &&
     css`
       background-color: transparent;
-      color: #fff;
-      border: 1px solid #fff;
+      color: #000;
+      border: 1px solid #000;
     `}
 
   ${(props) =>
@@ -47,6 +47,9 @@ const StyledButton = styled.button`
         margin-right: 5px;
       }
     `}
+`;
+export const StyledButton = styled.button`
+  ${ButtonStyle}
 `;
 export default function Button({ children, ...rest }) {
   return <StyledButton {...rest}>{children}</StyledButton>;
