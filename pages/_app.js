@@ -4,7 +4,8 @@ const GlobalStyles = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@1,200&display=swap');  body{
     padding:0;
     margin:0;
-  
+    background-color:#FAFAFA;
+   
     font-family: 'Urbanist', sans-serif;;
 
 }
