@@ -1,7 +1,9 @@
 import styled, { css } from "styled-components";
-
+import { primary } from "@/lib/colors";
 export const ButtonStyle = css`
   border: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
 
   padding: 5px 15px;
   border-radius: 5px;
@@ -29,17 +31,28 @@ export const ButtonStyle = css`
     css`
       background-color: transparent;
       color: #000;
-      border: 1px solid #000;
+      border: 1.5px solid #000;
     `}
 
-  ${(props) =>
+    ${(props) =>
     props.primary &&
+    !props.outline &&
     css`
-      background-color: #82cd47;
+      background-color: ${primary};
       color: #fff;
-      border: 1px solid #82cd47;
+      border: 1.5px solid ${primary};
       &:hover {
-        box-shadow: 0 0 5px white, 0 0 30px #82cd47;
+        box-shadow: 0 0 5px white, 0 0 30px ${primary};
+      }
+    `}${(props) =>
+    props.primary &&
+    props.outline &&
+    css`
+      background-color: transparent;
+      color: ${primary};
+      border: 1.5px solid ${primary};
+      &:hover {
+        box-shadow: 0 0 5px white, 0 0 30px ${primary};
       }
     `}
 

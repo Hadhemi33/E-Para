@@ -3,7 +3,7 @@ import Button from "./Button";
 import CartIcon from "./icons/Cart";
 import Link from "next/link";
 
-const WhiteBox = styled.div`
+const WhiteBox = styled(Link)`
   background-color: white;
   padding: 20px;
   height: 200px;
@@ -37,26 +37,27 @@ const ProductWrapper = styled.div`
   border-radius: 10px;
 `;
 const ProductInfoBox = styled.div`
-  padding: 20px;
+  padding: 10px;
 `;
 const Price = styled.div`
-  font-size: 0.8rem;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 500;
   ////
   text-align: right;
 `;
 export default function ProductBox({ _id, title, description, price, images }) {
+  const url = "/product/" + _id;
   return (
     <ProductWrapper>
-      <WhiteBox>
+      <WhiteBox href={url}>
         <img src={images?.[0]} alt="" />
       </WhiteBox>
       <ProductInfoBox>
-        <Title href={""}>{title}</Title>
+        <Title href={url}>{title}</Title>
         <PriceRow>
           <Price> ${price}</Price>
 
-          <Button primary>
+          <Button primary outline>
             <CartIcon />
           </Button>
         </PriceRow>
