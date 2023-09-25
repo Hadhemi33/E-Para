@@ -8,7 +8,7 @@ import Ft1 from "../Assets/pack.jpg";
 import CartIcon from "./icons/Cart";
 
 const Bg = styled.div`
-  background-color: #fff;
+  background-color: white;
   width: 100%;
   height: 100%;
   color: #000;

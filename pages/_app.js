@@ -1,12 +1,15 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@1,200&display=swap');  body{
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+ body{
     padding:0;
     margin:0;
-    background-color:#FAFAFA;
-   
-    font-family: 'Urbanist', sans-serif;;
+    background-color:white;
+    font-family: 'Roboto', sans-serif;
+
 
 }
 `;

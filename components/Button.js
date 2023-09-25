@@ -9,6 +9,9 @@ export const ButtonStyle = css`
   align-items: center;
   text-decoration: none;
   cursor: pointer;
+  &:hover {
+    transform: scale(1.04);
+  }
   svg {
     height: 16px;
     margin-right: 5px;
@@ -35,6 +38,9 @@ export const ButtonStyle = css`
       background-color: #82cd47;
       color: #fff;
       border: 1px solid #82cd47;
+      &:hover {
+        box-shadow: 0 0 5px white, 0 0 30px #82cd47;
+      }
     `}
 
   ${(props) =>
