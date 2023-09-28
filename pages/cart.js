@@ -90,10 +90,42 @@ export default function CartPage() {
   function lessOfThisProduct(id) {
     removeProduct(id);
   }
+  async function goToPayment() {
+    const response = await axios.post("/api/checkout", {
+      name,
+      email,
+      city,
+      postalCode,
+      streetAddress,
+      country,
+      // products:
+      cartProducts,
+    });
+    if (response.data.url) {
+      window.location = response.data.url;
+    }
+  }
   let total = 0;
   for (const productId of cartProducts) {
     const price = products.find((p) => p._id === productId)?.price || 0;
     total += price;
+  }
+
+  if (window.location.href.includes("success")) {
+    return (
+      <>
+        <Header />
+        <Center>
+          <ColumnWrapper>
+            <Box>
+             
+              <h1>Thank you for your order</h1>
+              <p>We will email you when your order is sent</p>
+            </Box>
+          </ColumnWrapper>
+        </Center>
+      </>
+    );
   }
   return (
     <>
@@ -102,7 +134,6 @@ export default function CartPage() {
         <ColumnWrapper>
           <Box>
             <h2>Cart</h2>
-
             {!cartProducts?.length && <div>Your cart is empty</div>}
             {products?.length > 0 && (
               <Table>
@@ -137,14 +168,14 @@ export default function CartPage() {
                       <td>
                         {cartProducts.filter((id) => id === product._id)
                           .length * product.price}{" "}
-                        TND
+                        $
                       </td>
                     </tr>
                   ))}
                   <tr>
                     <td></td>
                     <td></td>
-                    <td>{total}TND</td>
+                    <td>{total}$</td>
                   </tr>
                 </tbody>
               </Table>
@@ -153,6 +184,7 @@ export default function CartPage() {
           {!!cartProducts?.length && (
             <Box>
               <h2>Order information</h2>
+
               <Input
                 type="text"
                 placeholder="Name"
@@ -198,7 +230,12 @@ export default function CartPage() {
                 name="country"
                 onChange={(ev) => setCountry(ev.target.value)}
               ></Input>
-              <Button black block>
+              {/* <input
+                type="hidden"
+                name="products"
+                value={cartProducts.join(",")}
+              /> */}
+              <Button black block onClick={goToPayment}>
                 Continue to payment
               </Button>
             </Box>
