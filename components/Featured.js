@@ -6,6 +6,8 @@ import ButtonLink from "./ButtonLink";
 
 import Ft1 from "../Assets/pack.jpg";
 import CartIcon from "./icons/Cart";
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
 
 const Bg = styled.div`
   background-color: white;
@@ -68,6 +70,11 @@ const ButtonWrapper = styled.div`
   gap: 15px;
 `;
 export default function Featured({ product }) {
+  const { addProduct } = useContext(CartContext);
+
+  function addFeaturedToCart() {
+    addProduct(product._id);
+  }
   return (
     <Bg>
       <Center>
@@ -85,7 +92,7 @@ export default function Featured({ product }) {
                 >
                   Read More
                 </ButtonLink>
-                <Button primary={1} size="l">
+                <Button primary={1} size="l" onClick={addFeaturedToCart}>
                   <CartIcon />
                   Add to cart
                 </Button>
