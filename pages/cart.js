@@ -246,7 +246,7 @@ export default function CartPage() {
                 name="products"
                 value={cartProducts.join(",")}
               /> */}
-              <Button black block onClick={goToPayment}>
+              <Button black="true" block onClick={goToPayment}>
                 Continue to payment
               </Button>
             </Box>
