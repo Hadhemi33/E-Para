@@ -23,13 +23,17 @@ const Bg = styled.div`
 const Title = styled.h1`
   margin: 0;
   font-weight: normal;
-  margin-bottom: 40px;
-  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-top: 10px;
 
-  font-size: 3rem;
-  // @media screen and (min-width: 768px) {
-  //   font-size: 3rem;
-  // }
+  font-size: 2rem;
+  @media screen and (min-width: 768px) {
+    font-size: 3rem;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    font-size: 3rem;
+  }
 `;
 const Desc = styled.p`
   color: #000;
@@ -39,11 +43,21 @@ const Desc = styled.p`
 `;
 const ColumnsWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr;
+  order: -1;
   gap: 40px;
   justify-content: center;
   align-items: center;
   // align-items: center;
+  div:nth-child(1) {
+    order: 2;
+  }
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1.1fr 0.9fr;
+    div:nth-child(1) {
+      order: 0;
+    }
+  }
 `;
 const Column = styled.div`
   display: flex;
@@ -52,18 +66,20 @@ const Column = styled.div`
   height: auto;
 `;
 const Images = styled(Image)`
-  max-width: 100%;
-  height: 80%;
+  max-width: 40%;
+  max-height: 200px;
 
+  display: block;
+  margin: 20px auto;
   margin-left: auto;
   margin-right: auto;
-  ///////////////////
-  width: 70%;
 
-  // @media screen and (max-width: 768px) {
-  //   height: 70%;
-  //   width: 70%;
-  // }
+  @media screen and (min-width: 768px) {
+    width: 70%;
+    max-width: 70%;
+    height: 350px;
+    max-height: 500px;
+  }
 `;
 const ButtonWrapper = styled.div`
   display: flex;
@@ -85,7 +101,7 @@ export default function Featured({ product }) {
               <Desc>{product.description}</Desc>
               <ButtonWrapper>
                 <ButtonLink
-                  href={"/products/" + product._id}
+                  href={"/product/" + product._id}
                   outline={1}
                   white={1}
                   size="l"

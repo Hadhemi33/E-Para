@@ -30,9 +30,14 @@ const Title = styled(Link)`
 `;
 const PriceRow = styled.div`
   align-items: center;
-  display: flex;
+  // display: flex;
+  display: block;
   justify-content: space-between;
   margin-top: 2px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    gap: 5px;
+  }
 `;
 const ProductWrapper = styled.div`
   border: 4px solid #eefffb;
@@ -42,10 +47,15 @@ const ProductInfoBox = styled.div`
   padding: 10px;
 `;
 const Price = styled.div`
-  font-size: 1.1rem;
-  font-weight: 500;
-  ////
+  font-size: 1rem;
+  font-weight: 400;
+
   text-align: right;
+  @media screen and (min-width: 768px) {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: left;
+  }
 `;
 export default function ProductBox({ _id, title, description, price, images }) {
   const url = "/product/" + _id;
