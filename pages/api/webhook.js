@@ -4,8 +4,9 @@ import { buffer } from "micro";
 import { Order } from "@/models/Order";
 
 const endpointSecret =
-  //   "whsec_634d3142fd2755bd61adaef74ce0504bd2044848c8aac301ffdb56339a0ca78d";
   "whsec_d6cb9ece289d2c05df8d60f061ce37a36ecef687f7d3ae6a73e480d8b01c8745";
+// "whsec_634d3142fd2755bd61adaef74ce0504bd2044848c8aac301ffdb56339a0ca78d";
+// "whsec_d6cb9ece289d2c05df8d60f061ce37a36ecef687f7d3ae6a73e480d8b01c8745";
 
 export default async function handler(req, res) {
   await mongooseConnect();
@@ -46,6 +47,3 @@ export default async function handler(req, res) {
 export const config = {
   api: { bodyParser: false },
 };
-
-//fairly-wows-trump-great
-//acct_1NvT6pJbmdmPG9jv
