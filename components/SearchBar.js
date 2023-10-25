@@ -4,7 +4,7 @@ import Center from "./Center";
 
 const SearchBarStyled = styled.input`
   // padding:5px 70px ;
-  min-width: 150%;
+  // min-width: 150%;
   //   background-color: red;
 
   font-size: 1.2rem;
@@ -23,9 +23,9 @@ export default function SearchBar({ searchTerm, setSearchTerm }) {
   return (
     <Center>
       <SearchBarStyled
+        value={searchTerm}
         type="text"
         placeholder=" &#x1F50E;&#xFE0E;  Search product..."
-        value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
     </Center>

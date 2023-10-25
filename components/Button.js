@@ -31,6 +31,25 @@ export const ButtonStyle = css`
       background-color: #fff;
       color: #000;
     `}
+     ${(props) =>
+    props.primary &&
+    props.center &&
+    !props.outline &&
+    css`
+      background-color: ${primary};
+      color: #fff;
+      width: 60%;
+      margin-left: 20%;
+      margin-bottom: 20px;
+      align-self: center;
+      justify-content: center;
+      text-align: center;
+
+      border: 1.5px solid ${primary};
+      &:hover {
+        box-shadow: 0 0 5px white, 0 0 30px ${primary};
+      }
+    `}
   
   ${(props) =>
     props.white &&
@@ -68,7 +87,9 @@ export const ButtonStyle = css`
       &:hover {
         box-shadow: 0 0 5px white, 0 0 30px ${primary};
       }
-    `}${(props) =>
+    `}
+    
+    ${(props) =>
     props.primary &&
     props.outline &&
     css`

@@ -4,7 +4,9 @@ import styled from "styled-components";
 import { Product } from "@/models/Product";
 import { mongooseConnect } from "@/lib/mongoose";
 import NewProducts from "@/components/NewProducts";
-
+import ButtonLink from "../components/ButtonLink";
+import Button from "../components/Button";
+import Footer from "@/components/Footer";
 
 export default function HomePage({ featuredProduct, newProducts }) {
   console.log({ newProducts });
@@ -13,18 +15,27 @@ export default function HomePage({ featuredProduct, newProducts }) {
       <Header />
       <Featured product={featuredProduct} />
       <NewProducts product={newProducts} />
+      <ButtonLink href={"/products"} primary={1} center={1} size="l">
+        Find More &#10095;
+      </ButtonLink>
+      <Footer />
     </div>
   );
 }
 export async function getServerSideProps() {
-  const featuredProductID = "650c5930e5f0d0524272c7bb";
+  const featuredProductID = "65392189cb8b61b8d3cbc181";
   await mongooseConnect();
   const featuredProduct = await Product.findById(featuredProductID);
-  const newProducts = await Product.find({}, null, {
-    sort: { _id: -1 },
+  const newProducts = await Product.find(
+    {},
+    null,
+    {
+      sort: { _id: -1 },
 
-    limit: 10,
-  });
+      limit: 8,
+    }
+    //button read more
+  );
   return {
     props: {
       featuredProduct: JSON.parse(JSON.stringify(featuredProduct)),

@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import Button from "./Button";
-import CartIcon from "./icons/Cart";
 import Link from "next/link";
 const Title = styled(Link)`
   font-weight: bold;
@@ -10,15 +8,16 @@ const Title = styled(Link)`
   margin: 5px;
 `;
 const CategoryWrapper = styled.div`
-  border: 4px solid #eefffb;
+  border: 2px solid #619a35;
   border-radius: 10px;
 `;
 const CategoryInfoBox = styled.div`
   padding: 10px;
 `;
 
-export default function ProductBox({ _id, name }) {
-  const url = "/category/" + _id;
+export default function CategoryBox({ _id, name }) {
+  const url = "/categories/" + _id;
+  // const url = `/category/${_id}`; // Lien dynamique vers la page de catégorie
   return (
     <CategoryWrapper>
       <CategoryInfoBox>

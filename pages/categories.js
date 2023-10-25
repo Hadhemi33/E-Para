@@ -1,4 +1,4 @@
-// // Importez mongoose et votre modèle de catégorie
+// Importez mongoose et votre modèle de catégorie
 // import mongoose from "mongoose";
 // import { Category } from "@/models/Category";
 // export async function getServerSideProps({ query }) {
@@ -29,21 +29,13 @@ import Title from "@/components/Title";
 import styled from "styled-components";
 import { Category } from "@/models/Category";
 import { mongooseConnect } from "@/lib/mongoose";
-import SearchBar from "@/components/SearchBar";
+import Footer from "@/components/Footer";
 const CategoryPage = ({ categories }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredCategories = categories.filter((categorie) =>
     categorie.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  //   const ProductsSearchdiv = styled.div`
-  //     width: 100%;
-  //     display: grid;
-  //     grid-template-columns: 1.5fr 1fr;
-  //     // display: flex;
-  //     // justify-content: space-between;
-  //     align-items: center;
-  //   `;
 
   return (
     <>
@@ -53,6 +45,7 @@ const CategoryPage = ({ categories }) => {
 
         <CategoriesGrid categories={filteredCategories} />
       </Center>
+      <Footer />
     </>
   );
 };
@@ -60,7 +53,7 @@ const CategoryPage = ({ categories }) => {
 export default CategoryPage;
 export async function getServerSideProps({ query }) {
   await mongooseConnect();
-  const categories = await Category.find({}, null, { sort: { _id: -1 } });
+  const categories = await Category?.find({}, null, { sort: { _id: -1 } });
   return {
     props: {
       categories: JSON.parse(JSON.stringify(categories)),

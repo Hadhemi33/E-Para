@@ -4,7 +4,7 @@ import Button from "./Button";
 import Image from "next/image";
 import ButtonLink from "./ButtonLink";
 
-import Ft1 from "../Assets/pack.jpg";
+import Ft1 from "../../images/almaflore.jpg";
 import CartIcon from "./icons/Cart";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
@@ -66,8 +66,8 @@ const Column = styled.div`
   height: auto;
 `;
 const Images = styled(Image)`
-  max-width: 40%;
-  max-height: 200px;
+  max-width: 80%;
+  max-height: 300px;
 
   display: block;
   margin: 20px auto;
@@ -75,9 +75,9 @@ const Images = styled(Image)`
   margin-right: auto;
 
   @media screen and (min-width: 768px) {
-    width: 70%;
-    max-width: 70%;
-    height: 350px;
+    width: 90%;
+    max-width: 90%;
+    height: 450px;
     max-height: 500px;
   }
 `;

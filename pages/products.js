@@ -1,8 +1,7 @@
 // import Header from "@/components/Header";
 // import styled from "styled-components";
 // import Center from "@/components/Center";
-import { mongooseConnect } from "@/lib/mongoose";
-import SearchBar from "@/components/SearchBar";
+
 // import { Product } from "@/models/Product";
 // import ProductsGrid from "@/components/ProductsGrid";
 // import Title from "@/components/Title";
@@ -33,8 +32,11 @@ import Header from "@/components/Header";
 import Center from "@/components/Center";
 import ProductsGrid from "@/components/ProductsGrid";
 import Title from "@/components/Title";
+import { mongooseConnect } from "@/lib/mongoose";
+import SearchBar from "@/components/SearchBar";
 import { Product } from "@/models/Product";
 import styled from "styled-components";
+import Footer from "@/components/Footer";
 
 const ProductsPage = ({ products }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -43,8 +45,7 @@ const ProductsPage = ({ products }) => {
     product.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
   const ProductsSearchdiv = styled.div`
-   
-     width: 100%;
+    width: 100%;
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     // display: flex;
@@ -62,6 +63,7 @@ const ProductsPage = ({ products }) => {
         </ProductsSearchdiv>
         <ProductsGrid products={filteredProducts} />
       </Center>
+      <Footer/>
     </>
   );
 };

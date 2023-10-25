@@ -40,8 +40,9 @@ const PriceRow = styled.div`
   }
 `;
 const ProductWrapper = styled.div`
-  border: 4px solid #eefffb;
+  border: 1px solid #619a35;
   border-radius: 10px;
+  margin-bottom: 40px;
 `;
 const ProductInfoBox = styled.div`
   padding: 10px;
