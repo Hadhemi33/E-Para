@@ -11,7 +11,7 @@ import BarsIcon from "./icons/Bars";
 const StyledHeader = styled.header`
   background-color: #fff;
   // max-height: 150px;
-  // border-bottom: 2px solid #39aa;
+  border-bottom: 2px solid #39aa;
 
   // @media screen and (max-width: 768px) {
   //   max-height: 100px;
@@ -41,6 +41,7 @@ const NavLink = styled(Link)`
   // font-size: 1.3rem;
   // align-items: center;
   // margin: 10px;
+  //
   display: block;
   color: #000;
   text-decoration: none;
@@ -51,7 +52,7 @@ const NavLink = styled(Link)`
 `;
 const StyledNav = styled.nav`
   ${(props) =>
-    props.mobileNavActive
+    props.NavActive
       ? `
 display: block;`
       : `display: none;
@@ -92,7 +93,7 @@ const NavButton = styled.button`
 `;
 export default function Header() {
   const { cartProducts } = useContext(CartContext);
-  const [mobileNavActive, setMobileNavActive] = useState(false);
+  const [mobilenavactive, setmobilenavactive] = useState(false);
   return (
     <StyledHeader>
       <Center>
@@ -100,14 +101,14 @@ export default function Header() {
           <Logo href={"/"}>
             <Image src={logoPara} alt="logo" width={300} />
           </Logo>
-          <StyledNav mobileNavActive={mobileNavActive}>
+          <StyledNav mobilenavactive={mobilenavactive}>
             <NavLink href={"/"}>Home</NavLink>
             <NavLink href={"/products"}>All products</NavLink>
             <NavLink href={"/categories"}>Categories</NavLink>
-            <NavLink href={"/account"}>Account</NavLink>
+            
             <NavLink href={"/cart"}>Cart ({cartProducts.length})</NavLink>
           </StyledNav>
-          <NavButton onClick={() => setMobileNavActive((prev) => !prev)}>
+          <NavButton onClick={() => setmobilenavactive((prev) => !prev)}>
             <BarsIcon />
           </NavButton>
         </Wrapper>

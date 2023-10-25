@@ -1,12 +1,17 @@
 import Button from "@/components/Button";
 import { CartContext } from "@/components/CartContext";
 import Center from "@/components/Center";
+import Image from "next/image";
 import Header from "@/components/Header";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import Table from "@/components/Table";
 import Input from "@/components/Input";
+import empty from "../Assets/empty.png";
+import sent from "../Assets/sent.png";
+import Title from "@/components/Title";
+
 const ColumnWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -62,6 +67,16 @@ const CityHolder = styled.div`
   display: flex;
   gap: 5px;
 `;
+const EmptyDiv = styled.div`
+  width: 100%;
+
+  display: grid;
+  justify-items: center;
+  gap: 50px;
+  text-align: center;
+  font-size: 1.2rem;
+`;
+
 export default function CartPage() {
   const { cartProducts, addProduct, removeProduct, clearCart } =
     useContext(CartContext);
@@ -133,6 +148,7 @@ export default function CartPage() {
             <Box>
               <h1>Thank you for your order</h1>
               <p>We will email you when your order is sent</p>
+              <Image width={100} src={sent} alt="ft1" />
             </Box>
           </ColumnWrapper>
         </Center>
@@ -145,8 +161,13 @@ export default function CartPage() {
       <Center>
         <ColumnWrapper>
           <Box>
-            <h2>Cart</h2>
-            {!cartProducts?.length && <div>Your cart is empty</div>}
+            <Title>Cart</Title>
+            {!cartProducts?.length && (
+              <EmptyDiv>
+                <h1>Your cart is empty</h1>
+                <Image width={200} src={empty} alt="ft1" />
+              </EmptyDiv>
+            )}
             {products?.length > 0 && (
               <Table>
                 <thead>
