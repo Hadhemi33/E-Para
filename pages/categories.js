@@ -25,7 +25,6 @@ import React, { useState } from "react";
 import Header from "@/components/Header";
 import Center from "@/components/Center";
 import CategoriesGrid from "@/components/CategoriesGrid";
-import Title from "@/components/Title";
 import styled from "styled-components";
 import { Category } from "@/models/Category";
 import { mongooseConnect } from "@/lib/mongoose";
@@ -36,10 +35,17 @@ const CategoryPage = ({ categories }) => {
   const filteredCategories = categories.filter((categorie) =>
     categorie.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  const Title = styled.h1`
+  font-size:2rem
+   margin: 30px 0 20px;
+   font-weight: 500;
+   color :#638163;
+   // color: #36591d
+  
+  `;
 
   return (
     <>
-
       <Center>
         <Title>𝓐𝓵𝓵 Categories</Title>
 

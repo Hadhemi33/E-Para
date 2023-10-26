@@ -1,6 +1,6 @@
 // import styled from "styled-components";
 // import Button from "./Button";
-// import { primary } from "@/lib/colors";
+import { primary } from "@/lib/colors";
 
 // const SearchBarStyled = styled.input`
 //   padding: 5px 50px;
@@ -67,10 +67,12 @@
 import styled from "styled-components";
 
 const SearchBarStyled = styled.input`
+  width: 60%;
   padding: 5px 50px;
-  min-width: 120px;
+  min-width: 170px;
   // background-color: red;
-  margin-right: 20px;
+  margin-left: 20%;
+  margin-bottom: 20px;
 
   font-size: 1.2rem;
   height: 30px;
@@ -79,8 +81,23 @@ const SearchBarStyled = styled.input`
   // border-block-start: none;
   border-bottom: 2px solid #9ece9f;
   @media screen and (max-width: 768px) {
-    width: 80%;
+    width: 70%;
     margin: 0;
+    margin-bottom: 10px;
+  }
+`;
+const StyledButtom = styled.button`
+  font-size: 1.2rem;
+  margin-left: 10px;
+
+  max-width: 30px;
+  height: 30px;
+  background-color: transparent;
+  color: #0c5b6b;
+  // border: 1.5px solid ${primary};
+  border: none;
+  &:hover {
+    box-shadow: 0 0 70px white, 0 0 50px #0c5b6b;
   }
 `;
 export default function SearchBar({
@@ -98,11 +115,11 @@ export default function SearchBar({
     <>
       <SearchBarStyled
         type="text"
-        placeholder=" &#x1F50E;&#xFE0E;  Search product..."
+        placeholder="   Search product..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <button onClick={handleSearchClick}>Rechercher</button>
+      <StyledButtom onClick={handleSearchClick}>&#x1F50E;&#xFE0E;</StyledButtom>
     </>
   );
 }

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Header from "@/components/Header";
 import Center from "@/components/Center";
 import ProductsGrid from "@/components/ProductsGrid";
-import Title from "@/components/Title";
 import { mongooseConnect } from "@/lib/mongoose";
 import SearchBar from "@/components/SearchBar";
 import { Product } from "@/models/Product";
@@ -22,6 +21,15 @@ const ProductsPage = ({ products }) => {
     // justify-content: space-between;
     align-items: center;
   `;
+
+  const Title = styled.h1`
+font-size:2rem
+ margin: 30px 0 20px;
+ font-weight: 500;
+ color :#638163;
+ // color: #36591d
+
+`;
   const handleSearchClick = () => {
     // Filtrer les produits basés sur la valeur de searchTerm
     const filtered = products.filter((product) =>
