@@ -59,7 +59,7 @@ const QuantityLabel = styled.span`
   padding: 0 15px;
   display: block;
   @media screen and (min-width: 768px) {
-    display: inline-block;
+    display: block;
     padding: 0 10px;
   }
 `;
@@ -142,7 +142,6 @@ export default function CartPage() {
   if (isSuccess) {
     return (
       <>
-        <Header />
         <Center>
           <ColumnWrapper>
             <Box>
@@ -157,7 +156,6 @@ export default function CartPage() {
   }
   return (
     <>
-      <Header />
       <Center>
         <ColumnWrapper>
           <Box>

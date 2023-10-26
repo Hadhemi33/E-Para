@@ -33,7 +33,6 @@ export default function ProductPage({ product }) {
   const { addProduct } = useContext(CartContext);
   return (
     <>
-      <Header />
       <Center>
         <ColWrapper>
           <WhiteBox>

@@ -39,13 +39,12 @@ const CategoryPage = ({ categories }) => {
 
   return (
     <>
-      <Header />
+
       <Center>
         <Title>𝓐𝓵𝓵 Categories</Title>
 
         <CategoriesGrid categories={filteredCategories} />
       </Center>
-      <Footer />
     </>
   );
 };
