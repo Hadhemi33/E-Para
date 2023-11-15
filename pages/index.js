@@ -12,11 +12,10 @@ export default function HomePage({ featuredProduct, newProducts }) {
   console.log({ newProducts });
   return (
     <div>
- 
       <Featured product={featuredProduct} />
       <NewProducts product={newProducts} />
       <ButtonLink href={"/products"} primary={1} center={1} size="l">
-        Find More &#10095;
+        Trouver plus &#10095;
       </ButtonLink>
     </div>
   );

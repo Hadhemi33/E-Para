@@ -47,7 +47,7 @@ const CategoryPage = ({ categories }) => {
   return (
     <>
       <Center>
-        <Title>𝓐𝓵𝓵 Categories</Title>
+        <Title>Toutes les catégories</Title>
 
         <CategoriesGrid categories={filteredCategories} />
       </Center>

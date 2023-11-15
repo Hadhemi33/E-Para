@@ -113,17 +113,18 @@ export default function Footer() {
         </P>
         <Footer_Menu>
           <StyledMenu mobilenavactive={mobilenavactive}>
-            <NavLink href={"/"}>Home</NavLink>
-            <NavLink href={"/products"}>All products</NavLink>
-            <NavLink href={"/categories"}>Categories</NavLink>
+            <NavLink href={"/"}>Accueil</NavLink>
+            <NavLink href={"/products"}>Produits</NavLink>
+            <NavLink href={"/categories"}>Accueil</NavLink>
+            <NavLink href={"/contact"}>Contact</NavLink>
           </StyledMenu>
         </Footer_Menu>
       </Footer_content>
 
       <Footer_bottom>
         <P>
-          &copy;{new Date().getFullYear()} | All rights reserved | Terms Of
-          Service | Privacy
+          &copy;{new Date().getFullYear()} | Tous droits réservés | Conditions
+          d'utilisation | Confidentialité
         </P>
       </Footer_bottom>
     </Foooter>

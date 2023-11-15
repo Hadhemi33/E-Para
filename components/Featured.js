@@ -5,6 +5,7 @@ import Image from "next/image";
 import ButtonLink from "./ButtonLink";
 
 import Ft1 from "../../images/almaflore.jpg";
+import Ft2 from "../Assets/feataure.png";
 import CartIcon from "./icons/Cart";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
@@ -14,14 +15,26 @@ const Bg = styled.div`
   width: 100%;
   height: 100%;
   color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   // padding: 0px 0px 0px 0px;
 
   // @media screen and (min-width: 768px) {
   //   min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   // }
 `;
 const Title = styled.h1`
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-weight: normal;
   margin-bottom: 20px;
   margin-top: 10px;
@@ -31,6 +44,9 @@ const Title = styled.h1`
     font-size: 3rem;
     margin-top: 40px;
     margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     font-size: 3rem;
   }
@@ -40,6 +56,9 @@ const Desc = styled.p`
   font-size: 1.2rem;
   // margin-top: 30px;
   margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 const ColumnsWrapper = styled.div`
   display: grid;
@@ -53,6 +72,10 @@ const ColumnsWrapper = styled.div`
     order: 2;
   }
   @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     grid-template-columns: 1.1fr 0.9fr;
     div:nth-child(1) {
       order: 0;
@@ -83,7 +106,11 @@ const Images = styled(Image)`
 `;
 const ButtonWrapper = styled.div`
   display: flex;
-  gap: 15px;
+
+  gap: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 export default function Featured({ product }) {
   const { addProduct } = useContext(CartContext);
@@ -97,25 +124,22 @@ export default function Featured({ product }) {
         <ColumnsWrapper>
           <Column>
             <div>
-              <Title>{product.title}</Title>
-              <Desc>{product.description}</Desc>
+              {/* <Title>{product.title}</Title> */}
+              <Title> 𝙎𝙖𝙣𝙩é 𝙚𝙩 𝘽𝙞𝙚𝙣-ê𝙩𝙧𝙚 à 𝙥𝙤𝙧𝙩é𝙚 𝙙𝙚 𝙘𝙡𝙞𝙘! </Title>
+              {/* <Desc>{product.description}</Desc> */}
+              <Desc>
+                ParaTun vous propose une large gamme de produits en petits prix.
+                Ne ratez pas nos réductions et promotions importantes sur les
+                plus grandes marques.
+              </Desc>
               <ButtonWrapper>
-                <ButtonLink
-                  href={"/product/" + product._id}
-                  outline={1}
-                  white={1}
-                  size="l"
-                >
-                  Read More
+                <ButtonLink href={"/products"} primary={1} size="l">
+                  Voir plus &#10095;
                 </ButtonLink>
-                <Button primary={1} size="l" onClick={addFeaturedToCart}>
-                  <CartIcon />
-                  Add to cart
-                </Button>
               </ButtonWrapper>
             </div>
           </Column>
-          <Images src={Ft1} alt="ft1" />
+          <Images src={Ft2} alt="ft1" />
         </ColumnsWrapper>
       </Center>
     </Bg>

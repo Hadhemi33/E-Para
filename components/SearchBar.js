@@ -115,7 +115,7 @@ export default function SearchBar({
     <>
       <SearchBarStyled
         type="text"
-        placeholder="   Search product..."
+        placeholder="  chercher un produit..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />

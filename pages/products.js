@@ -52,7 +52,7 @@ font-size:2rem
         <ProductsGrid products={filteredProducts} />
       </Center> */}
       <Center>
-        <Title>𝓐𝓵𝓵 𝓹𝓻𝓸𝓭𝓾𝓬𝓽𝓼</Title>
+        <Title>Tous les produits</Title>
         <SearchBar
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}

@@ -102,12 +102,12 @@ export default function Header() {
             <Image src={logoPara} alt="logo" width={300} />
           </Logo>
           <StyledNav mobilenavactive={mobilenavactive}>
-            <NavLink href={"/"}>Home</NavLink>
-            <NavLink href={"/products"}>All products</NavLink>
+            <NavLink href={"/"}>Accueil</NavLink>
+            <NavLink href={"/products"}>Produits</NavLink>
             <NavLink href={"/categories"}>Categories</NavLink>
             <NavLink href={"/contact"}>Contact</NavLink>
 
-            <NavLink href={"/cart"}>Cart ({cartProducts.length})</NavLink>
+            <NavLink href={"/cart"}>Panier ({cartProducts.length})</NavLink>
           </StyledNav>
           <NavButton onClick={() => setmobilenavactive((prev) => !prev)}>
             <BarsIcon />

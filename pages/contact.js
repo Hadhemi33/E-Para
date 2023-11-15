@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import Button from "@/components/Button";
 import Center from "@/components/Center";
+
 const Container = styled.div`
   align-items: center;
   justify-content: space-between;
@@ -70,7 +71,7 @@ const Contact_form_text = styled.input`
   margin-bottom: 1rem;
 `;
 const Textarea = styled.input`
-  width: 80%;
+  width: 95%;
   height: 100%;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -83,80 +84,82 @@ const Textarea = styled.input`
 `;
 export default function Contact() {
   return (
-    <Container>
-      <ContactStyled>
-        <H33>Contact Us</H33>
-        <Contact_content>
-          <Contact_left_Right>
-            <P>
-              <SpanCon>ADDRESS </SpanCon>
+    <Center>
+      <Container>
+        <ContactStyled>
+          <H33>Contactez-nous</H33>
+          <Contact_content>
+            <Contact_left_Right>
+              <P>
+                <SpanCon>Visitez-nous : </SpanCon>
+                <br />
+                08 Rue Newton, Ariana <br /> 2088 Tunisia
+              </P>
               <br />
-              08 Rue Newton, Ariana <br /> 2088 Tunisia
-            </P>
-            <br />
 
-            <P>
-              <SpanCon>PHONE</SpanCon>
+              <P>
+                <SpanCon>Appelez-nous :</SpanCon>
+                <br />
+                +216 123 456 789
+              </P>
               <br />
-              +216 123 456 789
-            </P>
-            <br />
 
-            <P>
-              <SpanCon>EMAIL</SpanCon>
-              <br />
-              ParaTun.Contactini@gmail.com
-            </P>
-          </Contact_left_Right>
+              <P>
+                <SpanCon>Écrivez-nous</SpanCon>
+                <br />
+                paratuncontactini@gmail.com
+              </P>
+            </Contact_left_Right>
 
-          <Contact_left_Right>
-            <Contact_form
-              action="https://formsubmit.co/Memo.Contactini@gmail.com"
-              method="POST"
-            >
-              <Textarea
-                style={{
-                  fontSize: "1rem",
-                }}
-                type="text"
-                name="name"
-                required
-                placeholder="Your name"
-              />
-              <Textarea
-                style={{
-                  fontSize: "1rem",
-                }}
-                type="email"
-                name="email"
-                required
-                placeholder="Your email"
-              />
-              {/* <Contact_form_text */}
-              <Textarea
-                style={{
-                  fontSize: "1rem",
-                }}
-                type="text"
-                name="phone"
-                required
-                placeholder="Your phone"
-              />
-              <Textarea
-                style={{
-                  fontSize: "1rem",
-                }}
-                name="msg"
-                required
-                placeholder="Your message"
-              ></Textarea>
-              <Button primary={1} size="l" type="submit" value="Send">
-                <Center>Send</Center>
-              </Button>
-            </Contact_form>
-          </Contact_left_Right>
-        </Contact_content>
-      </ContactStyled>
-    </Container>
+            <Contact_left_Right>
+              <Contact_form
+                action="https://formsubmit.co/paratuncontactini@gmail.com"
+                method="POST"
+              >
+                <Textarea
+                  style={{
+                    fontSize: "1rem",
+                  }}
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="Nom"
+                />
+                <Textarea
+                  style={{
+                    fontSize: "1rem",
+                  }}
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Adresse e-mail"
+                />
+                {/* <Contact_form_text */}
+                <Textarea
+                  style={{
+                    fontSize: "1rem",
+                  }}
+                  type="text"
+                  name="phone"
+                  required
+                  placeholder="Numéro de téléphone"
+                />
+                <Textarea
+                  style={{
+                    fontSize: "1rem",
+                  }}
+                  name="msg"
+                  required
+                  placeholder="Message"
+                ></Textarea>
+                <Button primary={1} size="l" type="submit" value="Send">
+                  <Center>Envoyer</Center>
+                </Button>
+              </Contact_form>
+            </Contact_left_Right>
+          </Contact_content>
+        </ContactStyled>
+      </Container>
+    </Center>
   );
 }
