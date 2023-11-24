@@ -1,0 +1,3 @@
+"manager=yarn" 
+"command=install" 
+"runner=yarn" 
